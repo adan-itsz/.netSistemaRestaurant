@@ -1,0 +1,14 @@
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\bin\Debug\restaurant.exe.config
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\bin\Debug\restaurant.exe
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\bin\Debug\restaurant.pdb
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\bin\Debug\MaterialSkin.dll
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.csprojResolveAssemblyReference.cache
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.Form1.resources
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.Properties.Resources.resources
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.csproj.GenerateResource.Cache
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.exe
+c:\users\adán\documents\visual studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.pdb
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.adminPrincipal.resources
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\bin\Debug\MySql.Data.dll
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\bin\Debug\MySql.Data.xml
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.addPlatillo.resources
