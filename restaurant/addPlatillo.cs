@@ -20,6 +20,7 @@ namespace restaurant
     {
         private const string connMysql = "DataSource=localhost; Database=restaurant; Uid=adan; Pwd=123456;";
         MySqlConnection myconn = new MySqlConnection(connMysql);
+        int imgLength;
         MySqlConnection myconn2 = new MySqlConnection(connMysql);
         Image imagen1;
         string imagen;
@@ -130,12 +131,12 @@ namespace restaurant
                 MySqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
                 //int index = Convert.ToInt32( reader.ToString());
-                int index = 14;
+                int index = 1;
                 reader.Close();
                 myconn.Close();
                 //plato
                 myconn.Open();
-                 query = "INSERT INTO plato (nombre, descripcion,nivel_dificultad,foto,precio, id_categoria,id_receta ) VALUES (?nombre, ?descripcion,?dificultad,?foto,?precio,?categoria,?receta)";
+                 query = "INSERT INTO plato (nombre, descripcion,nivel_dificultad,foto,precio, id_categoria,id_receta,long_foto ) VALUES (?nombre, ?descripcion,?dificultad,?foto,?precio,?categoria,?receta,?long)";
                  cmd = new MySqlCommand(query, myconn);
 
                 cmd.Parameters.AddWithValue("?nombre", nombre);
@@ -145,8 +146,10 @@ namespace restaurant
                 cmd.Parameters.AddWithValue("?precio", precio);
                 cmd.Parameters.AddWithValue("?categoria", categoria);
                 cmd.Parameters.AddWithValue("?receta", index);
+                cmd.Parameters.AddWithValue("?long", imgLength);
                 cmd.ExecuteNonQuery();
                 myconn.Close();
+                this.Close();
 
 
             } catch(Exception ex)
@@ -160,10 +163,10 @@ namespace restaurant
         {
             string sTemp = Path.GetTempFileName();
             FileStream fs = new FileStream(sTemp, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            img.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+            img.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
             fs.Position = 0;
 
-            int imgLength = Convert.ToInt32(fs.Length);
+            imgLength = Convert.ToInt32(fs.Length);
             byte[] bytes = new byte[imgLength];
             fs.Read(bytes, 0, imgLength);
             fs.Close();
@@ -171,25 +174,8 @@ namespace restaurant
 
         }
 
-        public Image regresar(byte[] bytes)
-        {
-            MemoryStream ms = new MemoryStream(bytes);
-            Bitmap bm = null;
-            try
-            {
-                bm = new Bitmap(ms);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return bm;
-
-        }
+   
     }
-
- 
-
 
 
     

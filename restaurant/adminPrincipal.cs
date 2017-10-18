@@ -11,6 +11,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Globalization;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace restaurant
 {
@@ -30,6 +31,7 @@ namespace restaurant
             cargarEmpleados();
             llenarComboBox();
             cargarCategorias();
+            cargarPlatos();
 
             pictureBox1.Image = Image.FromFile("c:\\beacon.png");
         }
@@ -83,6 +85,61 @@ namespace restaurant
             {
                 MessageBox.Show("error" + ex);
             }
+        }
+
+        public void cargarPlatos()
+        {
+            try
+            {
+                byte[] rawData;
+                UInt32 tamanio;
+                List<byte> array = new List<byte>();
+                MemoryStream ms;
+                Bitmap bm = null;
+                myconn.Open();
+                MySqlCommand cmd = new MySqlCommand("select foto,long_foto  from plato", myconn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (!reader.HasRows)
+                {
+                    throw new Exception("no contiene imagenes aun");
+                }
+
+                reader.Read();
+                tamanio = reader.GetUInt32(reader.GetOrdinal("long_foto"));
+                rawData = new byte[tamanio];
+                reader.GetBytes(reader.GetOrdinal("foto"), 0, rawData, 0,(Int32)tamanio);
+                ms = new MemoryStream(rawData);
+                bm = new Bitmap(ms);
+                ms.Close();
+                ms.Dispose();
+                reader.Close();
+                reader.Dispose();
+                myconn.Close();
+                pictureBox2.Image = bm;
+                
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+        public Image regresar(byte[] bytes)
+        {
+            MemoryStream ms = new MemoryStream(bytes);
+            Bitmap bm = null;
+            try
+            {
+                bm = new Bitmap(ms);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return bm;
+
         }
 
         public void cargarCategorias()

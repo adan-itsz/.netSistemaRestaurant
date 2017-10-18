@@ -83,6 +83,7 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabCarta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,6 +96,7 @@
             this.tabCategorias.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -114,6 +116,7 @@
             // 
             // tabCarta
             // 
+            this.tabCarta.Controls.Add(this.pictureBox2);
             this.tabCarta.Controls.Add(this.listView1);
             this.tabCarta.Controls.Add(this.pictureBox1);
             this.tabCarta.Controls.Add(this.materialRaisedButton1);
@@ -785,6 +788,15 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(29, 28);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(231, 127);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // adminPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -813,6 +825,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -874,5 +887,6 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.ComboBox cBoxEncargadoCategoria;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
