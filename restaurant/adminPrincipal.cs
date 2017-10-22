@@ -91,34 +91,61 @@ namespace restaurant
         {
             try
             {
+                platoParaLista platoInfo;
+                List<platoParaLista> platos = new List<platoParaLista>();
                 byte[] rawData;
                 UInt32 tamanio;
                 List<byte> array = new List<byte>();
-                MemoryStream ms;
+                MemoryStream ms=null;
                 Bitmap bm = null;
+                string nombre;
                 myconn.Open();
-                MySqlCommand cmd = new MySqlCommand("select foto,long_foto  from plato", myconn);
+                MySqlCommand cmd = new MySqlCommand("select foto,nombre,long_foto  from plato", myconn);
                 MySqlDataReader reader = cmd.ExecuteReader();
+
                 if (!reader.HasRows)
                 {
                     throw new Exception("no contiene imagenes aun");
                 }
+                while (reader.Read()) {
 
-                reader.Read();
-                tamanio = reader.GetUInt32(reader.GetOrdinal("long_foto"));
-                rawData = new byte[tamanio];
-                reader.GetBytes(reader.GetOrdinal("foto"), 0, rawData, 0,(Int32)tamanio);
-                ms = new MemoryStream(rawData);
-                bm = new Bitmap(ms);
+                    nombre=reader["nombre"].ToString();
+                    tamanio = reader.GetUInt32(reader.GetOrdinal("long_foto"));
+                    rawData = new byte[tamanio];
+                    reader.GetBytes(reader.GetOrdinal("foto"), 0, rawData, 0, (Int32)tamanio);
+                    ms = new MemoryStream(rawData);
+                    bm = new Bitmap(ms);
+                    platos.Add(new platoParaLista( bm, nombre, tamanio));
+                 }
                 ms.Close();
                 ms.Dispose();
                 reader.Close();
                 reader.Dispose();
                 myconn.Close();
-                pictureBox2.Image = bm;
-                
+                DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
+                imageCol.Name = "foto";
+                if (platos != null)
+                {
+
+                    dataGridView4.Columns.Add("", "");
+                    dataGridView4.Columns.Add(imageCol);
+                    for (int i = 1; i < platos.Count; i++)
+                    {
+                        dataGridView4.Rows.Add();
+                    }
 
 
+                    for (int i = 0; i < platos.Count; i++)
+                    {
+                        platoInfo = platos[i];
+                         dataGridView4[0, i].Value = platoInfo.nombre;
+                         dataGridView4[1, i].Value = platoInfo.bm;
+                        
+                    }
+                    dataGridView4.AutoResizeColumns();
+                    dataGridView4.AllowUserToResizeColumns = true;
+
+                }
             }
             catch(Exception ex)
             {
@@ -283,6 +310,14 @@ namespace restaurant
         {
             addPlatillo a = new addPlatillo();
             a.Show();
+        }
+
+        private void dataGridView4_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            MessageBox.Show(e.RowIndex.ToString());
+            infoPlato ip = new infoPlato(e.RowIndex);
+            ip.Show();
+          //  MessageBox.Show(e.RowIndex.ToString());
         }
     }
 

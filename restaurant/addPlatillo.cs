@@ -86,6 +86,7 @@ namespace restaurant
         {
             
             String ing = cBoxIngredientesReceta.SelectedItem.ToString();
+            ing += "  " + txtCantidadReceta.Text;
             listView1.Items.Add(ing);
             listaIngredientes.Add(ing);
 
@@ -114,24 +115,24 @@ namespace restaurant
             try {
                 //receta
                 myconn2.Open();
-                String query = "INSERT INTO receta (nombre, descripcion,ingredientes) VALUES (?nombre, ?descripcion,?ingredientes)";
+                String query = "INSERT INTO receta (nombre, pasos,ingredientes) VALUES (?nombre, ?pasos,?ingredientes)";
                 MySqlCommand cmd = new MySqlCommand(query, myconn2);
                
 
                 cmd.Parameters.AddWithValue("?nombre", nombre);
-                cmd.Parameters.AddWithValue("?descripcion", pasosReceta);
+                cmd.Parameters.AddWithValue("?pasos", pasosReceta);
                 cmd.Parameters.AddWithValue("?ingredientes", totalidadIngredientes);
                 cmd.ExecuteNonQuery();
                 myconn2.Close();
            
                 myconn.Open();
-                query = "select max(id_receta) from receta";
+                query = "select id_receta from receta where id_receta=(select max(id_receta) from receta)"; 
                 cmd = new MySqlCommand(query, myconn);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
-                //int index = Convert.ToInt32( reader.ToString());
-                int index = 1;
+                // int index = Convert.ToInt32( reader.ToString());
+                string index=reader["id_receta"].ToString();
                 reader.Close();
                 myconn.Close();
                 //plato
