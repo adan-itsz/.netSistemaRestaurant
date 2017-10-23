@@ -33,5 +33,11 @@ namespace restaurant
             adminPrincipal a = new adminPrincipal();
             a.Show();
         }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            user u = new user();
+            u.Show();
+        }
     }
 }

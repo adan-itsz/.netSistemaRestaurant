@@ -13,3 +13,5 @@ C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\bin\D
 C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\bin\Debug\MySql.Data.xml
 C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.addPlatillo.resources
 C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.infoPlato.resources
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.user.resources
+C:\Users\Adán\Documents\Visual Studio 2015\Projects\restaurant\restaurant\obj\Debug\restaurant.cuenta.resources

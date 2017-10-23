@@ -195,6 +195,7 @@ namespace restaurant
             adapter.Fill(table);
             dataGridView1.DataSource = table;
             myconn.Close();
+            
 
         }
 
@@ -314,10 +315,10 @@ namespace restaurant
 
         private void dataGridView4_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            MessageBox.Show(e.RowIndex.ToString());
+         
             infoPlato ip = new infoPlato(e.RowIndex);
             ip.Show();
-          //  MessageBox.Show(e.RowIndex.ToString());
+        
         }
     }
 
