@@ -30,9 +30,9 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabCarta = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabAlmacen = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -82,21 +82,30 @@
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabCarta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabAlmacen.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabCuentas.SuspendLayout();
             this.tabEmpleados.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabCategorias.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -128,6 +137,18 @@
             this.tabCarta.UseVisualStyleBackColor = true;
             this.tabCarta.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(18, 25);
+            this.dataGridView4.MultiSelect = false;
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(784, 379);
+            this.dataGridView4.TabIndex = 5;
+            this.dataGridView4.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView4_CellMouseDoubleClick);
+            // 
             // listView1
             // 
             this.listView1.Location = new System.Drawing.Point(6, 6);
@@ -144,19 +165,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(712, 581);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(136, 42);
-            this.materialRaisedButton1.TabIndex = 2;
-            this.materialRaisedButton1.Text = "Agregar platillo";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
             // tabAlmacen
             // 
             this.tabAlmacen.BackColor = System.Drawing.Color.White;
@@ -170,7 +178,7 @@
             this.tabAlmacen.Location = new System.Drawing.Point(4, 22);
             this.tabAlmacen.Name = "tabAlmacen";
             this.tabAlmacen.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlmacen.Size = new System.Drawing.Size(667, 434);
+            this.tabAlmacen.Size = new System.Drawing.Size(871, 434);
             this.tabAlmacen.TabIndex = 1;
             this.tabAlmacen.Text = "Almacen Ingredientes";
             // 
@@ -362,10 +370,16 @@
             // 
             // tabCuentas
             // 
+            this.tabCuentas.Controls.Add(this.materialLabel5);
+            this.tabCuentas.Controls.Add(this.dataGridView6);
+            this.tabCuentas.Controls.Add(this.materialDivider4);
+            this.tabCuentas.Controls.Add(this.materialLabel4);
+            this.tabCuentas.Controls.Add(this.dataGridView5);
+            this.tabCuentas.Controls.Add(this.dateTimePicker1);
             this.tabCuentas.Location = new System.Drawing.Point(4, 22);
             this.tabCuentas.Name = "tabCuentas";
             this.tabCuentas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCuentas.Size = new System.Drawing.Size(667, 434);
+            this.tabCuentas.Size = new System.Drawing.Size(871, 434);
             this.tabCuentas.TabIndex = 2;
             this.tabCuentas.Text = "Cuentas";
             this.tabCuentas.UseVisualStyleBackColor = true;
@@ -382,7 +396,7 @@
             this.tabEmpleados.Location = new System.Drawing.Point(4, 22);
             this.tabEmpleados.Name = "tabEmpleados";
             this.tabEmpleados.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmpleados.Size = new System.Drawing.Size(667, 434);
+            this.tabEmpleados.Size = new System.Drawing.Size(871, 434);
             this.tabEmpleados.TabIndex = 3;
             this.tabEmpleados.Text = "Empleados";
             this.tabEmpleados.UseVisualStyleBackColor = true;
@@ -587,7 +601,7 @@
             this.tabCategorias.Location = new System.Drawing.Point(4, 22);
             this.tabCategorias.Name = "tabCategorias";
             this.tabCategorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCategorias.Size = new System.Drawing.Size(667, 434);
+            this.tabCategorias.Size = new System.Drawing.Size(871, 434);
             this.tabCategorias.TabIndex = 4;
             this.tabCategorias.Text = "Categorias cocina";
             this.tabCategorias.UseVisualStyleBackColor = true;
@@ -776,6 +790,19 @@
             this.dataGridView3.Size = new System.Drawing.Size(293, 342);
             this.dataGridView3.TabIndex = 14;
             // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(712, 581);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(136, 42);
+            this.materialRaisedButton1.TabIndex = 2;
+            this.materialRaisedButton1.Text = "Agregar platillo";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
@@ -787,17 +814,69 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // dataGridView4
+            // dateTimePicker1
             // 
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(18, 25);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(784, 379);
-            this.dataGridView4.TabIndex = 5;
-            this.dataGridView4.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView4_CellMouseDoubleClick);
+            this.dateTimePicker1.CustomFormat = "\"yyyy/MM/dd\"";
+            this.dateTimePicker1.Location = new System.Drawing.Point(131, 97);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(42, 134);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(455, 227);
+            this.dataGridView5.TabIndex = 2;
+            this.dataGridView5.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellDoubleClick);
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(150, 51);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(155, 19);
+            this.materialLabel4.TabIndex = 3;
+            this.materialLabel4.Text = "Seleccionar por fecha";
+            // 
+            // materialDivider4
+            // 
+            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider4.Depth = 0;
+            this.materialDivider4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.materialDivider4.Location = new System.Drawing.Point(519, 23);
+            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider4.Name = "materialDivider4";
+            this.materialDivider4.Size = new System.Drawing.Size(17, 385);
+            this.materialDivider4.TabIndex = 4;
+            this.materialDivider4.Text = "materialDivider4";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(578, 82);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(266, 279);
+            this.dataGridView6.TabIndex = 5;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(675, 23);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(56, 19);
+            this.materialLabel5.TabIndex = 6;
+            this.materialLabel5.Text = "Detalle";
             // 
             // adminPrincipal
             // 
@@ -812,12 +891,15 @@
             this.Load += new System.EventHandler(this.adminPrincipal_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabCarta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabAlmacen.ResumeLayout(false);
             this.tabAlmacen.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabCuentas.ResumeLayout(false);
+            this.tabCuentas.PerformLayout();
             this.tabEmpleados.ResumeLayout(false);
             this.tabEmpleados.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -828,7 +910,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -891,5 +974,11 @@
         private System.Windows.Forms.ComboBox cBoxEncargadoCategoria;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private MaterialSkin.Controls.MaterialDivider materialDivider4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

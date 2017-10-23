@@ -320,6 +320,36 @@ namespace restaurant
             ip.Show();
         
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            string query = "SELECT * from cuenta where fecha =?fecha";
+            myconn.Open();
+            DataTable table = new DataTable();
+            MySqlCommand cmd = new MySqlCommand(query, myconn);
+            cmd.Parameters.AddWithValue("?fecha", dateTimePicker1.Value.Date);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(table);
+            dataGridView5.DataSource = table;
+            myconn.Close();
+        }
+
+        private void dataGridView5_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = Convert.ToInt32( dataGridView5.Rows[e.RowIndex].Cells[0].Value);//id cuenta
+            MessageBox.Show(indice.ToString());
+
+            string query = "SELECT P.nombre,P.precio FROM plato P INNER JOIN detalle_cuenta DC ON P.id_plato = DC.id_plato where DC.id_cuenta=" + indice;
+            myconn.Open();
+            DataTable table = new DataTable();
+            MySqlCommand cmd = new MySqlCommand(query, myconn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(table);
+            dataGridView6.DataSource = table;
+            myconn.Close();
+
+
+        }
     }
 
 
